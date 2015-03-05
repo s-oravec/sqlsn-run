@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="sqlsn-run : sqlsn run module">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>sqlsn-run</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/principal-engineering/sqlsn-run">View on GitHub</a>
+
+          <h1 id="project_title">sqlsn-run</h1>
+          <h2 id="project_tagline">sqlsn run module</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/principal-engineering/sqlsn-run/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/principal-engineering/sqlsn-run/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="sqlsn---run" class="anchor" href="#sqlsn---run" aria-hidden="true"><span class="octicon octicon-link"></span></a>SQLSN - run</h1>
+
+<p>Module implements commands for running scripts stored in tree of directories.</p>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
+
+<p>Module name is <code>sqlsn-run</code> so in "applications" written using SQLSN the substitution variables starting with <code>m_sqlsn_run</code> or <code>g_sqlsn_run</code> should not be used.</p>
+
+<h2>
+<a id="init" class="anchor" href="#init" aria-hidden="true"><span class="octicon octicon-link"></span></a>Init</h2>
+
+<p>Initialize using</p>
+
+<pre><code>@&amp;&amp;sqlsn_require sqlsn-run
+</code></pre>
+
+<p>or</p>
+
+<pre><code>@&amp;&amp;sqls_require_from_path "&lt;path&gt;/sqlsn-run"
+</code></pre>
+
+<h2>
+<a id="globals" class="anchor" href="#globals" aria-hidden="true"><span class="octicon octicon-link"></span></a>Globals</h2>
+
+<p>Globals defined by stack module</p>
+
+<h3>
+<a id="g_run_path" class="anchor" href="#g_run_path" aria-hidden="true"><span class="octicon octicon-link"></span></a>g_run_path</h3>
+
+<p>Current path in directory tree.</p>
+
+<h3>
+<a id="g_run_action" class="anchor" href="#g_run_action" aria-hidden="true"><span class="octicon octicon-link"></span></a>g_run_action</h3>
+
+<p>Action performed - it allows you to create different scripts for different actions e.g. </p>
+
+<ul>
+<li>
+<code>config</code> for configuration</li>
+<li>
+<code>install</code> for installation</li>
+<li>
+<code>uninstall</code> for uninstallation</li>
+<li>...</li>
+</ul>
+
+<p><strong>See:</strong> tests in <code>test/test_application</code></p>
+
+<h3>
+<a id="g_run_script" class="anchor" href="#g_run_script" aria-hidden="true"><span class="octicon octicon-link"></span></a>g_run_script</h3>
+
+<p>Name of the script run by module, when <code>run_dir</code> command is called.</p>
+
+<h2>
+<a id="module-internals" class="anchor" href="#module-internals" aria-hidden="true"><span class="octicon octicon-link"></span></a>Module internals</h2>
+
+<h3>
+<a id="stack_path" class="anchor" href="#stack_path" aria-hidden="true"><span class="octicon octicon-link"></span></a>stack_path</h3>
+
+<p>Stack for storing path during walk thru directory tree</p>
+
+<h2>
+<a id="module-command-scripts" class="anchor" href="#module-command-scripts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Module command scripts</h2>
+
+<p>Command scripts provided by the <code>run</code> module.</p>
+
+<h3>
+<a id="run_dir_begin" class="anchor" href="#run_dir_begin" aria-hidden="true"><span class="octicon octicon-link"></span></a>run_dir_begin</h3>
+
+<p>Call it at the begining of the script for directory to push path onto stack.</p>
+
+<h3>
+<a id="run_dir-dir" class="anchor" href="#run_dir-dir" aria-hidden="true"><span class="octicon octicon-link"></span></a>run_dir <code>&lt;dir&gt;</code>
+</h3>
+
+<p>Call it inside the script to run <code>g_run_script</code> in subdirectory <code>&lt;dir&gt;</code></p>
+
+<h3>
+<a id="run_script-pathtoscript" class="anchor" href="#run_script-pathtoscript" aria-hidden="true"><span class="octicon octicon-link"></span></a>run_script <code>&lt;path/to/script&gt;</code>
+</h3>
+
+<p>Run script with relative path from current script.</p>
+
+<h3>
+<a id="run_dir_end" class="anchor" href="#run_dir_end" aria-hidden="true"><span class="octicon octicon-link"></span></a>run_dir_end</h3>
+
+<p>Call it at the end of the script for directory to pop path from the stack.</p>
+
+<hr>
+
+<p>bump!</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">sqlsn-run maintained by <a href="https://github.com/principal-engineering">principal-engineering</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
