@@ -1,6 +1,6 @@
 # SQLSN - run
 
-Module implements commands for running scripts stored in tree of directories.
+Module implements commands for running scripts stored in directory tree.
 
 # Usage
 
@@ -22,11 +22,11 @@ or
 
 ## Globals
 
-Globals defined by stack module
+Globals defined by run module
 
 ### g_run_path
 
-Current path in directory tree.
+Current path.
 
 ### g_run_action
 

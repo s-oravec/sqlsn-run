@@ -1,1 +1,1 @@
-define run_module_path = ".."
+define run_module_path = "../.."
