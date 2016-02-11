@@ -6,7 +6,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "grunt test --verbose"
+    "test": "./node_modules/.bin/grunt test --verbose"
   },
   "repository": {
     "type": "git",
