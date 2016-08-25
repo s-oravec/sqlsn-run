@@ -10,8 +10,10 @@ spool off
 
 --module commands
 define run_dir_begin = &&l_path/lib/command/run_dir_begin.sql
+define run_dir_begin_impl = &&l_path/lib/command/run_dir_begin_impl.sql
 define run_dir       = &&l_path/lib/command/run_dir.sql
 define run_dir_end   = &&l_path/lib/command/run_dir_end.sql
+define run_dir_end_impl   = &&l_path/lib/command/run_dir_end_impl.sql
 define run_script    = &&l_path/lib/command/run_script.sql
 
 --define globals defined by module
